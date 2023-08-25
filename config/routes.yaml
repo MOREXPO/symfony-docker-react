@@ -1,0 +1,15 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+index:
+    path: /{wildcard?}
+    controller: App\Controller\DefaultController::index
+    requirements:
+        wildcard: ^(?!api\/).*$
+
+auth:
+    path: /auth
+    methods: ['POST']
